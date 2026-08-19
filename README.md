@@ -1,25 +1,41 @@
-# Black Harvest v0.3
+# Black Harvest FPS 日本語版
 
-日本語標準・全ファイル直下。
+今回アップロードされたIPAを再解析して作り直したWeb版FPSプロトタイプ。
 
-## 今回追加
-- 原本で確認された街/店舗/家/警察/倉庫系の構造をゲーム内ロケーションとして追加
-- 建物へ入る/出る
-- 店舗・家・倉庫・警察署・製造施設のインタラクション
-- 客NPCの出現
-- 注文生成
-- 価格交渉
-- 成約
-- 商品数量の消費
-- 売上反映
-- 手配度上昇
-- 警察の警戒
-- 門限
-- 日終了
-- 家/倉庫の保管
-- セーブ/ロード
-- スマホ操作
+## IPAから確認した戦闘系
+- PlayerController
+- RangedWeapon / RangedWeaponSO
+- MeleeWeapon / MeleeWeaponInteraction
+- Bullet
+- Shoot / ShootDistance
+- ShootSoundRadius
+- Reload / reloadable / ReloadData
+- Recoil
+- Damage / MaxHealth / currentHealth
+- CameraInput
+- CameraRotateSensitivity
+- Cinemachine3rdPersonAim
+
+## 重要
+IPA内部には `Cinemachine3rdPersonAim` が存在するため、原作のカメラ実装は厳密には三人称要素を含む。
+ただしユーザー指定のBlack Harvest Web版は**FPS（一人称）**として再構築する。
+
+## この版
+- 一人称カメラ
+- WASD移動
+- マウス視点
+- 射撃
+- リロード
+- 弾数
+- 反動
+- HP
+- 敵
+- ダメージ
+- 簡易3D街
+- 建物
+- 日本語HUD
+- モバイルタッチ操作
 - 全ファイル直下
+- GitHub Pages対応
 
-## 注意
-未確定の原作数値は暫定値。IPAから直接確認できた名称・構造と混同しない。
+Three.jsはCDNから読み込むため、npm不要。

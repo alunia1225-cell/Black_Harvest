@@ -1,0 +1,44 @@
+{
+  "project": "Black Harvest",
+  "source": "Substance-Syndicate-Tycoon-V-IPAOMTK.COM.ipa",
+  "confirmed": {
+    "player": "PlayerController",
+    "ranged_weapon": [
+      "RangedWeapon",
+      "RangedWeaponSO",
+      "RangedWeaponInteraction",
+      "RangedWeaponInteractionUI"
+    ],
+    "melee": [
+      "MeleeWeapon",
+      "MeleeWeaponInteraction"
+    ],
+    "projectile": "Bullet",
+    "shoot": [
+      "Shoot",
+      "ShootDistance",
+      "ShootSoundRadius"
+    ],
+    "reload": [
+      "Reload",
+      "ReloadData",
+      "reloadable"
+    ],
+    "recoil": "Recoil",
+    "health": [
+      "currentHealth",
+      "MaxHealth"
+    ],
+    "damage": [
+      "Damage",
+      "KnockDamage",
+      "PunchDamage"
+    ],
+    "camera": [
+      "CameraInput",
+      "CameraRotateSensitivity",
+      "Cinemachine3rdPersonAim"
+    ]
+  },
+  "web_decision": "First-person FPS because user requested FPS; original camera metadata includes Cinemachine3rdPersonAim."
+}

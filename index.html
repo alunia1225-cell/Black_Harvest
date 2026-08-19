@@ -1,10 +1,46 @@
 <!doctype html>
-<html lang="ja"><head><meta charset="UTF-8">
+<html lang="ja">
+<head>
+<meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
-<title>Black Harvest</title>
+<title>Black Harvest FPS</title>
 <style>
-html,body,#app{margin:0;width:100%;height:100%;overflow:hidden;background:#0c0e12}
-body{font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
-button{font:inherit}
-</style></head>
-<body><div id="app"></div><script type="module" src="./main.ts"></script></body></html>
+html,body{margin:0;width:100%;height:100%;overflow:hidden;background:#050609;font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:#fff}
+#game{width:100%;height:100%}
+canvas{display:block}
+#hud{position:fixed;inset:0;pointer-events:none;z-index:5}
+#top{position:absolute;left:14px;top:12px;background:#0a0d12dd;border:1px solid #3c4653;border-radius:8px;padding:10px 13px;font-size:14px}
+#title{font-size:22px;font-weight:800;letter-spacing:1px}
+#crosshair{position:absolute;left:50%;top:50%;width:22px;height:22px;transform:translate(-50%,-50%)}
+#crosshair:before,#crosshair:after{content:"";position:absolute;background:#fff;box-shadow:0 0 3px #000}
+#crosshair:before{left:10px;top:0;width:2px;height:22px}
+#crosshair:after{left:0;top:10px;width:22px;height:2px}
+#bottom{position:absolute;right:18px;bottom:18px;text-align:right;background:#0a0d12d9;padding:10px 14px;border-radius:8px;border:1px solid #3c4653}
+#ammo{font-size:28px;font-weight:800}
+#weapon{font-size:13px;color:#bbc3cd}
+#message{position:absolute;left:50%;bottom:120px;transform:translateX(-50%);background:#0a0d12e8;padding:9px 14px;border-radius:7px;color:#f1d675;display:none}
+#touch{position:fixed;inset:0;pointer-events:none;z-index:10}
+.touchbtn{pointer-events:auto;position:absolute;background:#1d2630aa;border:1px solid #738091;border-radius:50%;width:56px;height:56px;color:#fff;font-size:22px}
+#up{left:76px;bottom:125px}#left{left:16px;bottom:68px}#down{left:76px;bottom:68px}#right{left:136px;bottom:68px}
+#fire{right:24px;bottom:70px;width:82px;height:82px;background:#552d2daa}
+#reload{right:120px;bottom:82px;width:62px;height:62px}
+#touchHint{position:absolute;right:20px;top:90px;color:#aab2bd;font-size:12px;text-align:right}
+@media (min-width:900px){#touch{display:none}}
+</style>
+</head>
+<body>
+<div id="game"></div>
+<div id="hud">
+  <div id="top"><div id="title">BLACK HARVEST</div><div id="stats"></div></div>
+  <div id="crosshair"></div>
+  <div id="message"></div>
+  <div id="bottom"><div id="ammo"></div><div id="weapon">Ranged Weapon</div></div>
+</div>
+<div id="touch">
+  <button class="touchbtn" id="up">↑</button><button class="touchbtn" id="left">←</button><button class="touchbtn" id="down">↓</button><button class="touchbtn" id="right">→</button>
+  <button class="touchbtn" id="reload">↻</button><button class="touchbtn" id="fire">●</button>
+  <div id="touchHint">左下：移動　右下：射撃<br>画面をドラッグ：視点</div>
+</div>
+<script type="module" src="./main.js"></script>
+</body>
+</html>
