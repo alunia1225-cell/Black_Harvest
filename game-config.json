@@ -1,0 +1,16 @@
+{
+  "project": "Black Harvest",
+  "language": "ja",
+  "version": "0.3",
+  "原本": {
+    "Unity": "2022.3.62f2",
+    "アプリ": "8.1",
+    "ビルド": "82"
+  },
+  "web": {
+    "Vite": true,
+    "Phaser": true,
+    "GitHubPages": true
+  },
+  "未確定値": "原本照合待ち"
+}
